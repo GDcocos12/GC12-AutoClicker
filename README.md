@@ -2,6 +2,12 @@
 
 GC12 AutoClicker is a powerful and versatile Windows desktop application built with WPF (Windows Presentation Foundation) that allows you to automate mouse clicks. It offers multiple clicking modes, customizable hotkeys, and a robust macro system for creating and executing complex click sequences.  It's designed to be user-friendly while providing advanced features for power users.
 
+## Screenshots
+
+![ScrSh1](screenshots/sc1.png)
+![ScrSh2](screenshots/sc2.png)
+![ScrSh3](screenshots/sc3.png)
+
 ## Features
 
 *   **Multiple Click Modes:**
