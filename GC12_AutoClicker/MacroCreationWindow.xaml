@@ -1,0 +1,67 @@
+﻿<Window x:Class="GC12_AutoClicker.MacroCreationWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GC12_AutoClicker"
+        mc:Ignorable="d"
+        ResizeMode="NoResize"
+        Title="Create Macro" Height="450" Width="540">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Label Grid.Row="0" Grid.Column="0" Content="Macro Name:"/>
+        <TextBox x:Name="MacroNameTextBox" Grid.Row="0" Grid.Column="1" Margin="5"/>
+
+        <Label Grid.Row="1" Grid.Column="0" Content="Actions:"/>
+        <ListView x:Name="ActionsListView" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Margin="5">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="X" DisplayMemberBinding="{Binding X}" Width="50"/>
+                    <GridViewColumn Header="Y" DisplayMemberBinding="{Binding Y}" Width="50"/>
+                    <GridViewColumn Header="Duration (ms)" DisplayMemberBinding="{Binding ClickDuration}" Width="90"/>
+                    <GridViewColumn Header="Delay (ms)" DisplayMemberBinding="{Binding Delay}" Width="90"/>
+                    <GridViewColumn Header="Repeats" DisplayMemberBinding="{Binding Repetitions}" Width="70"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+        <StackPanel Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal" Margin="5">
+            <Label Content="X:" VerticalAlignment="Center"/>
+            <TextBox x:Name="XTextBox" Width="50" Margin="5,0,5,0" />
+            <Label Content="Y:" VerticalAlignment="Center"/>
+            <TextBox x:Name="YTextBox" Width="50" Margin="5,0,5,0" />
+            <Label Content="Duration:" VerticalAlignment="Center"/>
+            <TextBox x:Name="DurationTextBox" Width="50" Margin="5,0,5,0" />
+            <Label Content="Delay:" VerticalAlignment="Center"/>
+            <TextBox x:Name="DelayTextBox" Width="50" Margin="5,0,5,0"/>
+            <Label Content="Repeats:" VerticalAlignment="Center"/>
+            <TextBox x:Name="RepetitionsTextBox" Width="50" Margin="5,0,5,0" />
+        </StackPanel>
+        <Button Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Content="Add Action (F9)" Margin="5" Click="AddActionButton_Click"/>
+
+        <StackPanel Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,5,0,5">
+            <Button x:Name="MoveUpButton" Content="Move Up" Margin="5" Padding="5,2,5,2" Click="MoveUpButton_Click" IsEnabled="False"/>
+            <Button x:Name="MoveDownButton" Content="Move Down" Margin="5" Padding="5,2,5,2" Click="MoveDownButton_Click" IsEnabled="False"/>
+            <Button x:Name="DeleteActionButton" Content="Delete Action" Margin="5" Padding="5,2,5,2" Click="DeleteActionButton_Click" IsEnabled="False"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,10,0,0">
+            <Button x:Name="SaveButton" Content="Save" Margin="5" Padding="10,2,10,2" Click="SaveButton_Click"/>
+            <Button x:Name="CancelButton" Content="Cancel" Margin="5" Padding="10,2,10,2" Click="CancelButton_Click"/>
+            <Button x:Name="InstructionsButton" Content="Instructions" Margin="5" Padding="5,2,5,2" Click="InstructionsButton_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>
